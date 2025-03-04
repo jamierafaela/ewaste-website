@@ -1,0 +1,522 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: "DM Sans", sans-serif;
+    color: #F6FFF2;
+    background: linear-gradient(#364f3c,#47684f, #d9d9d9);
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.container{
+    padding: min(16px, 5%);
+    margin:auto;
+}
+
+
+.header{
+    
+    background: linear-gradient(to bottom, rgba(25, 10, 10, 0.796), rgba(63, 192, 149, 0.588)),
+    url("https://bpr.studentorg.berkeley.edu/wp-content/uploads/2018/09/background-board-card-825262.jpg");
+ 
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+
+
+}
+.headerLogo a img{
+    cursor: pointer;
+}
+
+nav{
+    display: flex;
+    flex: 1 1 300px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding:min(16px, 80%); /**/
+    background-color: #63776c83;
+    width: 100vmax;
+    height:62px;
+    filter: drop-shadow(1px 3px #253a2e);
+    position: fixed;
+    z-index: 99999;
+
+    img{
+        width: 180px;
+
+    }
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+    position: absolute;
+    background-blend-mode: multiply;
+    width: 1187px;/* nav space copypaste*/
+    padding: 18px 0 18px 0; /* nav space copypaste*/
+    margin-left: 190px;/* nav space copypaste*/
+
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+
+    position: relative;
+
+    a{
+        color: #F6FFF2;
+        text-decoration: none;
+        font-size: 13px;
+        
+    }
+    img{
+        width: 16px;
+        
+    }
+}
+
+
+.nav-links ul li ::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    /*pls maglagay k color effect iba*/
+    background: #d0dd44;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li :hover::after{
+    width: 100%;
+}
+.nav-links input{
+    font-size: 13px;
+    width: 167px;
+    display: inline-block;
+    background-color: #d9d9d9;
+}
+
+
+
+.text-box{
+    width: 90%;
+    color:#e1da9c;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    
+    
+    
+
+    h1{
+        font-family: "Jersey 10", serif;
+        font-size: 	8.333vw;
+        font-weight: 400px;
+        background: linear-gradient(to top, #122b17, #e1da9c, hsl(55, 68%, 7%));
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        filter: drop-shadow(5px 8px #1f2c24);
+        font-style: italic;
+
+    }
+
+    p, i{
+        font-family:"Jersey 10", serif;
+        font-weight: 500px;
+        font-size: 38px;
+        text-shadow: 2px 3px 5px #020f0a;
+        color: #e1db9cbf;
+        margin: 0px 0 20px 0;
+        font-style: italic;
+
+    }
+}
+.buy-btn, .sell-btn {
+    text-shadow: 2px 2px 4px #09291def;
+    display:inline-block;
+    background: linear-gradient(to top, #374C37, #598b59); 
+    border: 3px solid #273c2783;
+    border-radius: 20px;
+    box-shadow: 5px 4px 5px #0c1c15;
+    padding: 13px 68px;
+    margin: 20px;
+    font-family: "Jersey 10", serif;
+    color: #FEF7BD;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+.buy-btn:hover, .sell-btn:hover{
+    text-shadow:none;
+    background: none;
+    border: 3px solid #FEF7BD;
+    transition: 1.5s;
+     
+    /*nagiiba spacing pag naghhover btns, how to fix*/
+}
+
+.text-box a {
+    text-decoration: none;
+}
+
+.introduc, .quote, .questions {
+    margin: auto ;
+}
+
+/*welcome users*/
+.introduc{
+    margin: 10%;
+    height: auto;
+
+
+}
+.i-container{
+    /*pls fix the spacing, padding margin: bg and image*/
+    height: auto;
+    width: 1100px;
+    max-height: 9000vh;
+    max-width: 9000vh;
+    background-image:linear-gradient( #D9D9D9, #8DA08C);
+    border-radius: 40px;
+    margin: 0 0 0 90px;
+
+    display: flex;
+
+    box-shadow: 1px 2px 11px #0b1b14c6;
+
+}
+.sliderImg{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    width: 555px;
+}
+.sliderImg img{
+    width: 555px;
+    height: 590px;
+    border-radius: 20px;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.sliderNav{
+    display: flex;
+    column-gap: 60px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); /* Ensures centering */
+    z-index: 1;
+    background-image: linear-gradient(#51d18700, #51d18700, #0e4826e7);
+    justify-content: center; 
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-bottom: -30px;
+    border-radius: 20px;
+
+}
+.sliderNav a{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(214, 226, 221);
+    margin: 490px 0 30px 0;
+
+}
+
+.sliderWrapper{
+    position: relative;
+    width: 555px;
+    height: 590px;
+}
+.introduc-content{
+    flex: 1;
+    margin: 90px 30px 0 30px;
+
+    h2, p{
+        color: #466A45;
+        text-align: justify;
+        font-family:"Jersey 10", serif;
+    }
+    h2{
+        font-size: 65px;
+        margin: 10px 30px 0 30px;
+        width: 380px;
+    }
+    p{
+        font-size: 30px;
+        text-align: justify;
+        line-height: 3.5vh;
+        margin: 10px 85px 0 39px;
+
+    }
+
+}        
+.btn-secondary{
+    font-family:"Alexandria", sans-serif;
+    background: linear-gradient(to top, #374C37, #598b59);
+    border: 1px #374C37;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px #0c1c15;
+    color: #ede8c1;
+    font-size: 1vw;
+    padding: 10px 34px;
+    margin: 40px 0 0 130px;
+    cursor: pointer;
+}
+.btn-secondary:hover{
+    background:linear-gradient(to top, #474c37, #738b59);
+    color: #ede8c1;
+}
+
+hr{
+    background-color: #D9D9D9;
+    margin: 9% 0 0% 0;
+    padding: 10px;
+    transform: rotate(178deg);
+
+    height: 30px;
+    width: 100vmax;
+    margin-top: -2%;
+}
+.blogs{
+    align-items: center;
+    /*background:linear-gradient(#D9D9D9, #9e969675);*/
+    height: 80vh;
+    padding: 4% 10% 8% 10%;
+}
+.blogDataContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:initial;
+}
+
+.blogData{
+    border-radius: 24px;
+    background:#D9D9D9;
+    width: 340px;
+    height: 490px;
+    scale: 1;
+    transition: .5s;
+    filter: drop-shadow(1px 2px 1px #0d2219c6);
+    border: 1px solid rgb(37, 71, 46);
+
+    
+}
+.blogData:hover{
+    transform:translateY(-15px);
+    transition: 1.2s ease;
+    background: linear-gradient(#d9d9d9, #32694f90);
+    
+    
+    a{
+        color: #D9D9D9;
+    }
+}
+
+.blogDataImg img{
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin :40px 0 10px 0;
+    filter: drop-shadow(1px 2px 1px #0d2219c6);
+    position: relative;
+    
+
+}
+.blogDataImg{
+    background-image: rgb(79, 164, 164);
+}
+.blogsContent{
+    text-align: center;
+
+    h1{
+        font-family: "Jersey 10", serif;
+        font-size: 100px;
+        margin: 0 0 50px 0;
+        color: #D9D9D9;
+        filter:drop-shadow(1px 4px 1px #0d2219c6);
+    }
+    p, a{
+        font-family: "Jersey 25", serif;
+        font-size: 39px;
+        margin: 10px;
+        text-decoration: none;
+        color: #2f463b;
+    }
+    p{
+        font-weight: 600px;
+    }
+}
+.bg{
+    padding: 0px 0 100px 0;
+}
+.blogData{
+    position: relative;
+}
+
+
+.quote{
+    margin: 200px 0 0 0;
+    height: 500px;
+    background: linear-gradient(to bottom, #8DA08C,  rgba(22, 66, 22, 0.684), rgba(22, 66, 22, 0.684), #173a22), 
+    url(https://i.natgeofe.com/n/69b5b7dc-02c3-47b3-8063-781268ebab1e/01-e-waste-millions-tons.jpg?w=1280&h=853);
+    padding: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ 
+
+}
+.quote .container{
+    text-align: center;
+}
+.container p, blockquote{
+    padding-top: 30px;
+    color: #f3edbb;
+    font-family: "DM Sans", serif;
+    font-size: 25px;
+    font-style: italic;
+}
+.container img{
+    width: 70px;
+    height: 70px;
+
+}
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #173a22;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    color: #FFFFFF;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-social a:hover {
+    color: #4CAF50;
+}
+
+
+
+
+
+@media(max-width: 900px){ /* if naka mobile phone menubar*/
+    .text-box h1{
+        font-size:20px;
+    }
+    .nav-links ul li{
+        display:block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #4c6b5a;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .introduc{
+        width: 100px;
+        height: 1200px;
+        display: flex;
+    }
+    .i-container{
+        width: 1800px;
+        height: 1080px;
+        margin-right: 800px;
+    }
+    .sliderWrapper{
+        width: 400px;
+        height: 1900px;
+        display: flex;    
+    }
+
+    .sliderImg{
+        width:600px;
+        height: 490px;
+        margin-right: -90px;
+        overflow: hidden;
+    }
+
+    .sliderImg img{
+    width: 600px;
+    height: 490px;
+    overflow: hidden;
+
+
+    }
+
+    .sliderNav{
+        margin: 0 0 1410px 50px;
+
+    }
+    .introduc-content{
+        margin: 490px 0 0 -400px;
+        width: 490px;
+        padding: 35px 0px 0 50px;
+    }
+}
+

@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    box-sizing: border-box;
+    scroll-behavior:smooth;
+
+    
+}
+
+body{
+    font-family: "DM Sans", sans-serif;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    height: 100%;
+}
+
+.container{
+    padding: 16px;
+    margin:auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5%;
+    padding: 15px 0 0 74px; /**/
+    background-color: #63776c83;
+    width: 100vmax;
+    height:62px;
+    filter: drop-shadow(1px 3px #253a2e);
+    position: fixed;
+    z-index: 99999;
+        
+
+    img{
+        width: 180px;
+    }
+}
+.nav-links{
+    flex: 1;
+    text-align: right;/* nav space copypaste*/
+    position: absolute;
+    background-blend-mode: multiply;
+    width: 1187px;/* nav space copypaste*/
+    padding: 18px 0 18px 0; /* nav space copypaste*/
+    margin-left: 190px;/* nav space copypaste*/
+
+    
+}
+
+.ewasteLogo{
+    cursor: pointer; /* nav space copypaste*/
+     
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+
+    a{
+        color: #F6FFF2;
+        text-decoration: none;
+        font-size: 13px;
+        
+    }
+    img{
+        width: 16px;
+    }
+}
+
+
+.nav-links ul li ::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    /*pls maglagay k color effect iba*/
+    background: #d0dd44;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li :hover::after{
+    width: 100%;
+}
+.nav-links input{
+    font-size: 13px;
+    width: 167px;
+    display: inline-block;
+    background-color: #d9d9d9;
+}
+
+
+/*profile*/
+.profile-main{
+    background-image: linear-gradient(#fefffe54, #267b41)
+    , url(images/tvbg_enhanced.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-position: center;
+    /*centers the child elements of parent*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*--------*/
+    padding: 25%;
+    
+}
+
+.profile-contents{
+    position: relative;
+    background-color: rgba(52, 57, 54, 0.752);
+    width: 50vw;
+    height: 50vh;
+    padding: 50px;
+    border-radius: 15px;
+    padding-top: 12%;
+}
+.logIn h2{
+    color: hsl(0, 100%, 96%);
+    font-family:"Jersey 25", serif;
+    font-size: 50px;
+    
+}
+.logIn p{
+    color: hsl(0, 100%, 96%);
+}
+.logIn p a{
+    color: rgb(0, 255, 174);
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: none;
+}
+.logIn p a:hover{
+    text-decoration: underline;
+}
+.continueAcc{
+    text-decoration: none;
+    list-style-type: none;
+    margin-top: 3%;
+    height: 30vh;
+    a{
+        color: #2c1919;
+        text-decoration: none;
+
+    }
+}
+.continueAcc ul li img{
+    width: 20px;
+    margin: 0 15px -5px 0px;
+}
+.continueAcc img{
+}
+.continueAcc ul li{
+    background-color: #D9D9D9;
+    box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.492);
+    margin-bottom: 30px;
+    list-style: none;
+    text-decoration: none;
+    color: aquamarine;
+    margin: 0% 20% 1% 20%;
+    padding: 10px;
+
+}
+
+.continueAcc ul li:hover{
+    background-color: #809a8b;
+    a{
+        color: #ffffff;
+    }
+}
+
