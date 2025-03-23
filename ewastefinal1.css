@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -286,7 +286,7 @@ faq-section {
     flex: 0.5;
     padding: 0 30px 0 0;
     border-right: 3px solid #2a5d37;
-    height: 100%; /* Ensure vertical line height matches FAQ section */
+    height: 100%; 
 }
 
 .faq-header {
@@ -321,7 +321,7 @@ faq-section {
     color: #2a5d37;
     cursor: pointer;
     display: flex;
-    justify-content: space-between; /* Arrow aligned to the right */
+    justify-content: space-between; 
     align-items: center;
     transition: color 0.3s ease;
 }
@@ -332,11 +332,11 @@ faq-section {
 }
 
 .faq-title:hover {
-    color: #144022; /* Darker green hover effect */
+    color: #144022; 
 }
 
 .faq-trigger:checked + .faq-title i {
-    transform: rotate(90deg); /* Rotate arrow when open */
+    transform: rotate(90deg);
 }
 
 .faq-detail {

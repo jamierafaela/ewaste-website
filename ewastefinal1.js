@@ -1,4 +1,4 @@
-// JavaScript for "Back to Top" Button
+// Back to top
 const upButton = document.getElementById("upButton");
 
 // Show button when scrolling down
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const signupForm = document.getElementById("signupForm");
 
     toggleFormLink.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent the default behavior of the link
+        event.preventDefault(); 
 
         if (loginForm.classList.contains("hidden")) {
             // Show the login form
