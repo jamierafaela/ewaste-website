@@ -1,62 +1,53 @@
 <?php
+// Start session
+session_start();
+
 // Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ewasteph";
+$conn = new mysqli("localhost", "root", "", "ewasteph");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle Sign In
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['signin'])) {
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = $conn->real_escape_string($_POST['password']);
+// Check if the request is a POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['signup'])) {
+        // Handle sign-up
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $query = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password'])) {
-            echo "<script>alert('Sign In Successful! Welcome, {$user['name']}');</script>";
-            // Redirect to dashboard or homepage
-            header("Location: dashboard.php");
-            exit();
-        } else {
-            echo "<script>alert('Incorrect Password');</script>";
-        }
-    } else {
-        echo "<script>alert('No Account Found with this Email');</script>";
-    }
-}
-
-// Handle Sign Up
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['signup'])) {
-    $name = $conn->real_escape_string($_POST['name']);
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = password_hash($conn->real_escape_string($_POST['password']), PASSWORD_BCRYPT);
-
-    // Check if email already exists
-    $checkQuery = "SELECT * FROM users WHERE email='$email'";
-    $checkResult = $conn->query($checkQuery);
-    if ($checkResult->num_rows > 0) {
-        echo "<script>alert('An account with this email already exists');</script>";
-    } else {
+        // Insert user into database
         $query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
 
-        if ($conn->query($query) === TRUE) {
-            echo "<script>alert('Account Created Successfully! Please Sign In.');</script>";
-            header("Location: signin.php");
-            exit();
+        if ($conn->query($query)) {
+            echo "<script>alert('Welcome $name, Thank you for choosing us!'); window.location.href='index.php';</script>";
         } else {
-            echo "<script>alert('Error: " . $conn->error . "');</script>";
+            echo "<script>alert('Error: Unable to create account. Please try again.'); window.history.back();</script>";
+        }
+    } elseif (isset($_POST['signin'])) {
+        // Handle sign-in
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $query = "SELECT * FROM users WHERE email='$email'";
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            if (password_verify($password, $user['password'])) {
+                $name = $user['name'];
+                echo "<script>alert('Welcome back $name!'); window.location.href='index.php';</script>";
+            } else {
+                echo "<script>alert('Incorrect password. Please try again.'); window.history.back();</script>";
+            }
+        } else {
+            echo "<script>alert('No account found with this email.'); window.history.back();</script>";
         }
     }
 }
 
+// Close connection
 $conn->close();
 ?>
