@@ -15,28 +15,33 @@ upButton.onclick = function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", function () {
     const toggleFormLink = document.getElementById("toggleForm");
-    const formTitle = document.getElementById("formTitle");
-    const formToggleText = document.getElementById("formToggleText");
     const loginForm = document.getElementById("loginForm");
     const signupForm = document.getElementById("signupForm");
+    const formTitle = document.getElementById("formTitle");
+    const formToggleText = document.getElementById("formToggleText");
 
-    toggleFormLink.addEventListener("click", (event) => {
-        event.preventDefault(); 
-
-        if (loginForm.classList.contains("hidden")) {
-            // Show the login form
+    function toggleForms() {
+        if (signupForm.classList.contains("hidden")) {
+            signupForm.classList.remove("hidden");
+            loginForm.classList.add("hidden");
+            formTitle.textContent = "Sign Up";
+            formToggleText.innerHTML = 'Already have an account? <a href="#" id="toggleForm">Log in</a>';
+        } else {
             loginForm.classList.remove("hidden");
             signupForm.classList.add("hidden");
             formTitle.textContent = "Log in";
-            formToggleText.innerHTML = `New to site? <a href="#" id="toggleForm">Sign up</a>`;
-        } else {
-            // Show the signup form
-            loginForm.classList.add("hidden");
-            signupForm.classList.remove("hidden");
-            formTitle.textContent = "Sign up";
-            formToggleText.innerHTML = `Already have an account? <a href="#" id="toggleForm">Log in</a>`;
+            formToggleText.innerHTML = 'New to site? <a href="#" id="toggleForm">Sign up</a>';
+        }
+    }
+
+    document.body.addEventListener("click", function (event) {
+        if (event.target && event.target.id === "toggleForm") {
+            event.preventDefault();
+            toggleForms();
         }
     });
 });
+
