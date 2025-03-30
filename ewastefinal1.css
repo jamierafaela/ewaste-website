@@ -616,4 +616,5 @@ footer p {
 .footer-social i:hover {
     background-color: #f1c40f;
     color: #2a5d37;
+    /* transform: scale(1.1); */
 }
