@@ -1,0 +1,23 @@
+The step-by-step on how you'll be able to edit and access our code.
+
+  NOTE of this files:
+    ewastefinal1.html - Our final html file. Lahat lahat na andyan.
+    ewastefinal1.css
+    ewastefinal1.js
+
+    shop1.html - Decided to separate the Shop para mas mabroaden siya and may focus talaga
+    shop1.css
+    shop1.js
+    
+
+STEP 1: Clone the Repository File
+      - Para magawa mo to pindutin mo lang yung <code> sa may upper right and then click clone > download zip, magddownload yung mga files / repository natin sa lappy nyo / device
+
+STEP 2:Edit the File / code
+      - Pwede nyo yan maopen sa vscode nyo, and duon kayo mag code
+
+STEP 3: Commit your Changes
+      - After nyo mag edit sa vscode, make sure na pumunta kayo sa "Source Control" Sa may gilid, yung mga icons. 
+        Tapos may makikita kayo commit dun. BUT ake sure to PUT MESSAGE FIRST. Please keep it formal and specific, kung ano man iniba nyo.. 
+        Then, pindutin nyo na commit, and pull. Okay nyo lang siya.
+
