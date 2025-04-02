@@ -6,7 +6,7 @@
     <title>EWastePH</title>
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="ewastefinal1.css">
+    <link rel="stylesheet" href="ewasteWeb.css">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Jersey+10&family=Jersey+25&display=swap" rel="stylesheet">
     
     <!-- JavaScript -->
-    <script defer src="ewastefinal1.js"></script>
+    <script defer src="ewasteWeb.js"></script>
 </head>
 
 
@@ -172,128 +172,132 @@
         <!-- Shop Section -->
         <section id="shop" class="section shop-section">
             <h2>Shop</h2>
-            <div class="most-bought">
-                <h3>Most Bought Items</h3>
+            <div class="new-products">
+                <h3>Latest Available Items</h3>
                 <div class="product-grid">
                     <div class="product-card">
-                        <img src="products/motherboardraw-removebg-preview_enhanced.png" alt="Motherboard">
+                        <img src="images/productsImg/motherboard1.png" alt="Motherboard">
                         <h3>Motherboard</h3>
-                        <p>P 250.00</p>
+                        <p>P 350.00</p>
                         <button class="btn">Add to Cart</button>
                         <button class="btn">Buy</button>
-                        
-
                     </div>
                     <div class="product-card">
-                        <img src="products/processor.png" alt="Processor">
-                        <h3>Processor</h3>
+                        <img src="images/productsImg/dellCpu.png" alt="Processor">
+                        <h3>Dell CPU</h3>
                         <p>P 1,000.00</p>
                         <button class="btn">Add to Cart</button>
                         <button class="btn">Buy</button>
                     </div>
                     <div class="product-card">
-                        <img src="products/ram.png" alt="RAM">
-                        <h3>RAM</h3>
+                        <img src="images/productsImg/defected_laptop.png" alt="RAM">
+                        <h3>HP defected laptop</h3>
+                        <p>P 500.00</p>
+                        <button class="btn">Add to Cart</button>
+                        <button class="btn">Buy</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/productsImg/discplayer.png" alt="RAM">
+                        <h3>Disc Player</h3>
+                        <p>P 500.00</p>
+                        <button class="btn">Add to Cart</button>
+                        <button class="btn">Buy</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/productsImg/sd.png" alt="RAM">
+                        <h3>SD sht</h3>
                         <p>P 500.00</p>
                         <button class="btn">Add to Cart</button>
                         <button class="btn">Buy</button>
                     </div>
                 </div>
             </div>
-        
-            <div class="all-products">
-                <h3>All Products</h3>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="products/motherboardraw-removebg-preview_enhanced.png" alt="Motherboard">
-                        <h3>Motherboard</h3>
-                        <p>P 250.00</p>
-                        <button class="btn">Add to Cart</button>
-                        <button class="btn">Buy</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="products/keyboard.png" alt="Keyboard">
-                        <h3>Keyboard</h3>
-                        <p>P 150.00</p>
-                        <button class="btn">Add to Cart</button>
-                        <button class="btn">Buy</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="products/monitor.png" alt="Monitor">
-                        <h3>Monitor</h3>
-                        <p>P 3,000.00</p>
-                        <button class="btn">Add to Cart</button>
-                        <button class="btn">Buy</button>
-                    </div>
-                </div>
+
+            <form>
                 <div class="show-more-container">
-                    <button class="show-more-btn">Show More</button>
+                    <button type="submit" formaction ="ewasteShop.php" class="show-more-btn">Show More in SHOP</button>
                 </div>
+            </form>
             </div>
+            
         </section>
 
 
 <!-- Profile Section -->
-<section id="profile" class="section profile-section">
-    <section class="profile-contents">
-        <div class="logIn">
-            <h2 id="formTitle">Log in</h2>
-            <p id="formToggleText">
-                New to site? <a href="#" id="toggleForm">Sign up</a>
-            </p>
-        </div>
+    <section id="profile" class="section profile-section">
+            <section class="profile-contents">
+                <div class="logIn">
+                    <h2 id="formTitle">Log in</h2>
+                    <p id="formToggleText">
+                        New to site? <a href="#" id="toggleForm">Sign up</a>
+                    </p>
+                </div>
 
-        <div class="continueAcc">
-            <!-- Log In Form -->
-            <div id="loginForm">
-                <form action="profileHandler.php" method="POST">
-                    <input type="hidden" name="signin" value="1">
-                    <ul>
-                        <li>
-                            <label>Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </li>
-                        <li>
-                            <label> Password:</label>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                        </li>
-                        <li>
-                            <button type="submit" class="btn">Log in</button>
-                        </li>
-                    </ul>
-                </form>
-            </div>
+                <div class="continueAcc">
+                    <!-- PHP Check for Form Handling -->
+                    <?php
+                    // Check if there's an error to show
+                    if (isset($_GET['error'])) {
+                        echo "<p style='color: red;'>" . htmlspecialchars($_GET['error']) . "</p>";
+                    }
+                    ?>
 
-            <!-- Sign Up Form -->
-            <div id="signupForm" class="hidden">
-                <form action="profileHandler.php" method="POST">
-                    <input type="hidden" name="signup" value="1">
-                    <ul>
-                        <li>
-                            <label>Name:</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                        </li>
-                        <li>
-                            <label>Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </li>
-                        <li>
-                            <label>Password:</label>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                        </li>
-                        <li>
-                            <button type="submit" class="btn">Sign up</button>
-                        </li>
-                    </ul>
-                </form>
+                    <!-- Log In Form -->
+                    <div id="loginForm">
+                        <form action="profileHandler.php" method="POST">
+                            <input type="hidden" name="signin" value="1">
+                            <ul>
+                                <li>
+                                    <label>Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                </li>
+                                <li>
+                                    <label> Password:</label>
+                                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                                </li>
+                                <li>
+                                    <button type="submit" class="btn">Log in</button>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+
+                    <!-- Sign Up Form -->
+                    <div id="signupForm" class="hidden">
+                        <form action="profileHandler.php" method="POST">
+                            <input type="hidden" name="signup" value="1">
+                            <ul>
+                                <li>
+                                    <label>Name:</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                </li>
+                                <li>
+                                    <label>Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                </li>
+                                <li>
+                                    <label>Password:</label>
+                                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                                </li>
+                                <li>
+                                    <button type="submit" class="btn">Sign up</button>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <div class="profile-info hidden">
+                <h2>Welcome, <span id="userName"></span></h2>
+                <p>Your profile information will be displayed here.</p>
+                <button id="logoutBtn" class="btn">Log out</button>
             </div>
-        </div>
     </section>
 
-</section>
-
     <!-- Back to Top Button -->
-    <button id="upButton" title="Go to top"></button>
+    <button id="upButton" title="Go to top">
+        <i class="fa fa-arrow-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer>
