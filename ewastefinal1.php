@@ -299,7 +299,7 @@
         <i class="fa fa-arrow-up"></i>
     </button>
 
-    <!-- Footer -->
+    <!-- Footerr -->
     <footer>
         <p>&copy; 2024 EWastePH. All rights reserved. </p>
         <div class="footer-links">
@@ -314,3 +314,4 @@
     </footer>
 </body>
 </html>
+
